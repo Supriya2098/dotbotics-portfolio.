@@ -54,7 +54,7 @@ function Hero() {
       <div className="hero-index"><span>01 / 06</span><span className="hero-index-rule"></span><span>Ideas into impact</span></div>
     </div><div className="hero-visual" aria-label="Dotbotics brand mark">
       <div className="visual-label visual-label--top"><span className="status-dot"></span> Building what moves business forward</div>
-      <div className="visual-disc"><div className="disc-ring disc-ring--one"></div><div className="disc-ring disc-ring--two"></div><div className="disc-core"><span>db</span></div><span className="disc-caption">human insight<br />meets intelligent systems</span></div>
+      <div className="visual-disc"><div className="disc-ring disc-ring--one"></div><div className="disc-ring disc-ring--two"></div><div className="disc-core"><img src="/images/dotbotics-logo-source.png" alt="Dotbotics logo" /></div><span className="disc-caption">human insight<br />meets intelligent systems</span></div>
       <div className="visual-panel"><div className="panel-head"><span>CAPABILITY / 01</span><ArrowUpRight size={14} /></div><div className="panel-name">From complex problems<br />to thoughtful software.</div><div className="panel-tags"><span>ERP</span><span>AI</span><span>DATA</span></div></div>
       <div className="visual-label visual-label--bottom"><span>HYDERABAD</span><span>RAS AL KHAIMAH</span><span>ORLANDO</span></div>
     </div></div>
