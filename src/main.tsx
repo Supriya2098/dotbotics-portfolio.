@@ -110,13 +110,16 @@ function projectIndustry(project: Project) {
   const text = `${project.name} ${project.eyebrow} ${project.description}`.toLowerCase()
   const tags = [
     [/agri|crop|khet|krishi|remote sensing/.test(text), 'Agriculture'],
-    [/government|public health|hmis|nutrition|budget/.test(text), 'Public & Social Sector'],
+    [/government|public health|hmis|nutrition/.test(text), 'Health'],
     [/insurance/.test(text), 'Insurance'], [/manufactur/.test(text), 'Manufacturing'],
+    [/education|edtech|vinlab/.test(text), 'EdTech'],
     [/sport|learning|skill suburb/.test(text), 'Sports & Learning'],
     [/signage|media/.test(text), 'Media & Signage'], [/finance|budget|invoic/.test(text), 'Finance'],
     [/e-commerce|e-commerce|cosmetic|grocery|body cream|retail/.test(text), 'Retail & E-commerce'],
-    [/saas|platform|index|portal|erp/.test(text), 'SaaS & Enterprise Software'],
-    [/automotive/.test(text), 'Transportation & Logistics'],
+    [/saas|platform|index|portal|erp|software|it services/.test(text), 'IT Services & SaaS / Enterprise Software'],
+    [/automotive|vehicle registration|transport|logistics/.test(text), 'Transportation & Logistics'],
+    [/telecom|telecommunication/.test(text), 'Telecommunication'],
+    [/professional services|consultancy|consulting/.test(text), 'Professional Services'],
   ].filter(([match]) => match).map(([, value]) => value as string)
   return [...new Set(tags)]
 }
@@ -176,7 +179,7 @@ function Projects() {
   const shown = filtered
   const reset = () => { setMarket(''); setIndustry(''); setService(''); setQuery('') }
   const marketOptions = ['India', 'UAE', 'United States']
-  const industryOptions = ['Agriculture', 'Insurance', 'EdTech', 'Health', 'Retail & E-commerce', 'Sports & Learning', 'Media & Signage', 'Finance', 'Manufacturing', 'Public & Social Sector', 'SaaS & Enterprise Software', 'Transportation & Logistics']
+  const industryOptions = ['Manufacturing', 'Insurance', 'EdTech', 'Health', 'Retail & E-commerce', 'Sports & Learning', 'Media & Signage', 'Finance', 'Agriculture', 'Telecommunication', 'Transportation & Logistics', 'Professional Services', 'IT Services & SaaS / Enterprise Software']
   const serviceOptions = ['Website Design & Development', 'E-commerce Development', 'Multi-Vendor Marketplace Development', 'Web Application Development', 'ERP & Enterprise Solutions', 'Business Process Automation', 'AI & Machine Learning Solutions', 'Data Analytics & Business Intelligence']
   return <section className="section portfolio-section" id="projects"><div className="content-width"><SectionHeading number="04" eyebrow="Portfolio" title={<>Good ideas,<br /><em>put to work.</em></>} copy="Browse brochure projects and the website links supplied for this portfolio. Search and combine filters to find relevant work." />
     <div className="portfolio-toolbar"><div className="portfolio-count"><span className="count-dot"></span> {String(filtered.length).padStart(2, '0')} PROJECTS</div><label className="search-box"><span className="visually-hidden">Search projects</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects" /><span>Search</span></label></div>
